@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prime Rendit Kalkulator</title>
 
-    <!-- Icon (optional, kannst du ändern) -->
     <link rel="icon" type="image/svg+xml" href="https://base44.com/logo_v2.svg" />
 
-    <!-- Wichtig für GitHub Pages Routing und iFrame -->
+    <!-- CSP: Einbettung in primerendit.de / Webflow erlauben -->
     <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self' https: data: blob:; 
+          content="default-src 'self' https: data: blob:;
                    script-src 'self' 'unsafe-inline' 'unsafe-eval' https:;
                    style-src 'self' 'unsafe-inline' https:;
                    img-src 'self' data: https:;
@@ -19,6 +18,7 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/prime-rendit-kalkulator/src/main.jsx"></script>
+    <!-- WICHTIG: wieder die Vite-Standard-Angabe, OHNE Repo-Präfix -->
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
