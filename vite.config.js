@@ -1,15 +1,16 @@
+// vite.config.js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { fileURLToPath, URL } from 'url'
+import path from 'path'
 
-// Vite-Konfiguration
 export default defineConfig({
-  // Wichtig für GitHub Pages: Repo-Name als Base-Pfad
-  base: '/prime-rendit-kalkulator/',
   plugins: [react()],
+  // WICHTIG: Repo-Name hier eintragen
+  base: '/prime-rendit-kalkulator/',
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@': path.resolve(__dirname, './src'),
     },
+    extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.json'],
   },
 })
