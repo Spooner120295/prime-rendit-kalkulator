@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
     <script>
-      // Leitet jede "unbekannte" Route auf die App-Startseite weiter
-      var p = window.location.pathname.replace('/prime-rendit-kalkulator', '');
-      window.location.replace('/prime-rendit-kalkulator/' + (p ? '#'+p : ''));
+      // Holt die aktuelle URL nach der Domain
+      const redirect = window.location.origin + "/prime-rendit-kalkulator/";
+
+      // Baut die neue Ziel-URL mit Hash-Routing
+      const path = window.location.pathname.replace("/prime-rendit-kalkulator", "");
+      const search = window.location.search || "";
+      const hash = window.location.hash || "";
+
+      // Redirect zur App mit Hash-Fallback
+      window.location.replace(redirect + "#" + path + search + hash);
     </script>
   </head>
-  <body></body>
+  <body>
+    <p>Redirecting...</p>
+  </body>
 </html>
